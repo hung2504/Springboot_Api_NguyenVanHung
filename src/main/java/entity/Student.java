@@ -11,12 +11,12 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Builder
-@Table(name = "tbt_student")
+@Table(name = "tbl_student")
 public class Student {
 
     @Id
     @GeneratedValue
-    private long id;
+    private long StudentID;
 
     @Column(name = "first_name")
     private String firstName;

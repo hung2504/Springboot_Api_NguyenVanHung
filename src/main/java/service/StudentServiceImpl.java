@@ -34,4 +34,9 @@ public class StudentServiceImpl implements StudentService{
                 !"".equalsIgnoreCase(student.getFirstName()));
         return studentRepository.save(student1);
     }
+
+    @Override
+    public void deleteById(Long studentId) {
+        studentRepository.deleteById(studentId);
+    }
 }

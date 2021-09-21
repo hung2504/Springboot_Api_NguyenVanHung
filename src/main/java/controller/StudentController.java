@@ -2,10 +2,7 @@ package controller;
 
 import entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import service.StudentService;
 
 import java.util.List;
@@ -23,5 +20,11 @@ public class StudentController {
     @PostMapping("/students")
     public Student saveStudents(@RequestBody Student student){
         return studentService.saveStudent(student);
+    }
+
+    @PutMapping("/students/{id}")
+    public Student updateStudentById(@PathVariable("id") Long studentId,
+                                     @RequestBody Student student){
+        return studentService.updateStudentById(studentId,student);
     }
 }
